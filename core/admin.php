@@ -59,6 +59,7 @@
 		public static function signinuser( $handle, $password ) 
 		{
 			$conn = new PDO( DB_DSN, DB_USER, DB_PASS );
+			//$sql = "SELECT * FROM admins WHERE handle = :handle AND password = :password";
 			$sql = "SELECT * FROM admins WHERE handle = :handle AND password = :password";
 			$st = $conn->prepare( $sql );
 			$st->bindValue( ":handle", $handle, PDO::PARAM_INT );
